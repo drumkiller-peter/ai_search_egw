@@ -1,0 +1,28 @@
+name: ai_search
+description: "Ask EGW Writings a question or enter keywords. Note that Semantic search makes mistakes, so consider refining your question. Please check all listed references for a complete context to your question. Only the top results are shown."
+version: 0.1.0
+homepage:
+
+environment:
+  sdk: ^3.8.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  dio: ^5.9.0
+  envied: ^1.2.1
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^3.1.0
+  fixnum: ^1.1.0
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.8.0
+  freezed: ^3.2.3
+  json_serializable: ^6.11.0
+  envied_generator: ^1.2.1
+
+flutter:
