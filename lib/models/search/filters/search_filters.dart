@@ -8,7 +8,7 @@ abstract class SearchFilter with _$SearchFilter {
   const factory SearchFilter({
     List<int>? publications,
     List<String>? tags,
-    int? limit,
+    @JsonKey(defaultValue: 50) int? limit,
     String? startDate,
     String? endDate,
   }) = _SearchFilter;

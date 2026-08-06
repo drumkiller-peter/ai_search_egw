@@ -12,7 +12,7 @@ _SearchFilter _$SearchFilterFromJson(Map<String, dynamic> json) =>
           ?.map((e) => (e as num).toInt())
           .toList(),
       tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      limit: (json['limit'] as num?)?.toInt(),
+      limit: (json['limit'] as num?)?.toInt() ?? 50,
       startDate: json['startDate'] as String?,
       endDate: json['endDate'] as String?,
     );

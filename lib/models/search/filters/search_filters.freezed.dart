@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SearchFilter {
 
- List<int>? get publications; List<String>? get tags; int? get limit; String? get startDate; String? get endDate;
+ List<int>? get publications; List<String>? get tags;@JsonKey(defaultValue: 50) int? get limit; String? get startDate; String? get endDate;
 /// Create a copy of SearchFilter
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $SearchFilterCopyWith<$Res>  {
   factory $SearchFilterCopyWith(SearchFilter value, $Res Function(SearchFilter) _then) = _$SearchFilterCopyWithImpl;
 @useResult
 $Res call({
- List<int>? publications, List<String>? tags, int? limit, String? startDate, String? endDate
+ List<int>? publications, List<String>? tags,@JsonKey(defaultValue: 50) int? limit, String? startDate, String? endDate
 });
 
 
@@ -157,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<int>? publications,  List<String>? tags,  int? limit,  String? startDate,  String? endDate)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<int>? publications,  List<String>? tags, @JsonKey(defaultValue: 50)  int? limit,  String? startDate,  String? endDate)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SearchFilter() when $default != null:
 return $default(_that.publications,_that.tags,_that.limit,_that.startDate,_that.endDate);case _:
@@ -178,7 +178,7 @@ return $default(_that.publications,_that.tags,_that.limit,_that.startDate,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<int>? publications,  List<String>? tags,  int? limit,  String? startDate,  String? endDate)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<int>? publications,  List<String>? tags, @JsonKey(defaultValue: 50)  int? limit,  String? startDate,  String? endDate)  $default,) {final _that = this;
 switch (_that) {
 case _SearchFilter():
 return $default(_that.publications,_that.tags,_that.limit,_that.startDate,_that.endDate);case _:
@@ -198,7 +198,7 @@ return $default(_that.publications,_that.tags,_that.limit,_that.startDate,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<int>? publications,  List<String>? tags,  int? limit,  String? startDate,  String? endDate)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<int>? publications,  List<String>? tags, @JsonKey(defaultValue: 50)  int? limit,  String? startDate,  String? endDate)?  $default,) {final _that = this;
 switch (_that) {
 case _SearchFilter() when $default != null:
 return $default(_that.publications,_that.tags,_that.limit,_that.startDate,_that.endDate);case _:
@@ -213,7 +213,7 @@ return $default(_that.publications,_that.tags,_that.limit,_that.startDate,_that.
 @JsonSerializable()
 
 class _SearchFilter implements SearchFilter {
-  const _SearchFilter({final  List<int>? publications, final  List<String>? tags, this.limit, this.startDate, this.endDate}): _publications = publications,_tags = tags;
+  const _SearchFilter({final  List<int>? publications, final  List<String>? tags, @JsonKey(defaultValue: 50) this.limit, this.startDate, this.endDate}): _publications = publications,_tags = tags;
   factory _SearchFilter.fromJson(Map<String, dynamic> json) => _$SearchFilterFromJson(json);
 
  final  List<int>? _publications;
@@ -234,7 +234,7 @@ class _SearchFilter implements SearchFilter {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  int? limit;
+@override@JsonKey(defaultValue: 50) final  int? limit;
 @override final  String? startDate;
 @override final  String? endDate;
 
@@ -271,7 +271,7 @@ abstract mixin class _$SearchFilterCopyWith<$Res> implements $SearchFilterCopyWi
   factory _$SearchFilterCopyWith(_SearchFilter value, $Res Function(_SearchFilter) _then) = __$SearchFilterCopyWithImpl;
 @override @useResult
 $Res call({
- List<int>? publications, List<String>? tags, int? limit, String? startDate, String? endDate
+ List<int>? publications, List<String>? tags,@JsonKey(defaultValue: 50) int? limit, String? startDate, String? endDate
 });
 
 
