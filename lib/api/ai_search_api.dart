@@ -200,6 +200,36 @@ class AiSearchApi {
     }
   }
 
+  /// Deletes one AI search from the account's history.
+  /// `DELETE search-history/{chatId}`. Throws on failure.
+  Future<bool> deleteHistoryItem({required String chatId}) async {
+    try {
+      final response =
+          await _searchClient.delete("${Endpoints.history}/$chatId");
+      return _isSuccess(response.statusCode);
+    } on DioException catch (e) {
+      throw _handleDioError(e);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  /// Deletes the account's whole AI search history.
+  /// `DELETE search-history`. Throws on failure.
+  Future<bool> clearChatHistory() async {
+    try {
+      final response = await _searchClient.delete(Endpoints.history);
+      return _isSuccess(response.statusCode);
+    } on DioException catch (e) {
+      throw _handleDioError(e);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  static bool _isSuccess(int? statusCode) =>
+      statusCode != null && statusCode >= 200 && statusCode < 300;
+
   DioException _handleDioError(DioException e) {
     return e;
   }

@@ -159,6 +159,16 @@ final SearchResultsResponseModel? item = await aiSearchApi.getHistoryItem(
 );
 ```
 
+Delete history:
+
+```dart
+// One item
+await aiSearchApi.deleteHistoryItem(chatId: someHistoryId);
+
+// All of it
+await aiSearchApi.clearChatHistory();
+```
+
 > Note: `getChatHistory` accepts a `searchQuery` parameter for forward
 > compatibility, but it is not currently sent in the request.
 
@@ -209,6 +219,8 @@ final id = TsidService.generate();
 | `getSummary({summaryId, toolId})` | POST | `search-history/{summaryId}/summary` | `AISummaryResponse?` |
 | `getHistoryItem({chatId})` | GET | `search-history/{chatId}` | `SearchResultsResponseModel?` |
 | `getChatHistory({limit, offset, searchQuery})` | GET | `search-history` | `ChatHistoryResponseModel?` |
+| `deleteHistoryItem({chatId})` | DELETE | `search-history/{chatId}` | `bool` |
+| `clearChatHistory()` | DELETE | `search-history` | `bool` |
 | `getBalanceInfo()` | GET | `account/balance` | `BalanceResponse?` |
 | `getTransactions({limit, offset})` | GET | `account/transactions` | `TransactionsResponseModel?` |
 | `getTools()` | GET | `tools` | `ToolsResponseModel?` |
